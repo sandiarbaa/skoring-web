@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  value: string;
+  value?: string;
   type: string;
   htmlForId: string;
   placeholder: string;
