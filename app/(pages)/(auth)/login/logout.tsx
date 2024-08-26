@@ -1,4 +1,3 @@
-
 import axios from "axios";
 // import { useRouter } from "next/navigation";
 
@@ -17,7 +16,7 @@ const Logout = async () => {
     }
 
     // Lakukan request DELETE ke backend untuk menghapus token
-    await axios.delete("http://13.210.185.89/authentication", {
+    await axios.delete(`${process.env.API_URL}/authentication`, {
       data: {
         refreshToken,
       },

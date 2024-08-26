@@ -4,7 +4,8 @@ import nextConfig from "@/next.config.mjs";
 
 // Buat instance Axios
 const api = axios.create({
-  baseURL: "http://13.210.185.89",
+  // baseURL: "http://13.210.185.89",
+  baseURL: process.env.API_URL,
   // baseURL: nextConfig.env?.CUSTOM_VAR,
 });
 

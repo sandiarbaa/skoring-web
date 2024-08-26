@@ -121,6 +121,8 @@ const SidebarLink: React.FC<SidebarLinkProps> = ({ hover, role }) => {
               }
               alt="icon"
               className="w-6 h-6 mr-2"
+              width={0}
+              height={0}
             />
             <span>Register</span>
           </Link>

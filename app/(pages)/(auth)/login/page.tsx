@@ -22,10 +22,13 @@ const LoginPage: React.FC = () => {
   const auth = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://13.210.185.89/authentication", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `${process.env.API_URL}/authentication`,
+        {
+          email,
+          password,
+        }
+      );
       console.log(response);
       setStatus("success");
       if (response.status === 201) {
@@ -40,14 +43,19 @@ const LoginPage: React.FC = () => {
     } catch (error: any) {
       setMsg(error.response.data.message);
       setIsModalVisible(true);
-      setStatus("error")
+      setStatus("error");
     }
   };
 
   return (
     <div>
       <LoginLayout title="MASUK">
-        <ModalAuth isVisible={isModalVisible} msg={msg} status={status} onClose={handleCloseModal} />
+        <ModalAuth
+          isVisible={isModalVisible}
+          msg={msg}
+          status={status}
+          onClose={handleCloseModal}
+        />
         <form onSubmit={auth}>
           {/* Email */}
           <div className="flex flex-col mb-3">
