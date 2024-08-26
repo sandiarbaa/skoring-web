@@ -1,21 +1,21 @@
 "use client";
 
-import React from 'react'
-import ProtectedRoute from '../../(auth)/login/protectedRoute/ProtectedRoute'
-import DashboardLayout from '@/app/components/Layouts/DashboardLayout'
-import { usePathname } from 'next/navigation'
+import React from "react";
+import ProtectedRoute from "../../(auth)/login/protectedRoute/ProtectedRoute";
+import DashboardLayout from "@/app/components/Layouts/DashboardLayout";
+import { usePathname } from "next/navigation";
 
-const page = () => {
-    const pathname = usePathname();
+const Page = () => {
+  const pathname = usePathname();
   return (
     <div>
       <ProtectedRoute>
         <DashboardLayout hover={pathname}>
-            <div>Setting</div>
+          <div>Setting</div>
         </DashboardLayout>
       </ProtectedRoute>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Page;
