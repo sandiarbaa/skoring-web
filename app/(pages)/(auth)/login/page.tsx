@@ -23,8 +23,8 @@ const LoginPage: React.FC = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        // `${process.env.API_URL}/authentication`,
-        `http://13.210.185.89/authentication`,
+        `${process.env.API_URL}/authentication`,
+        // `http://13.210.185.89/authentication`,
         {
           email,
           password,
